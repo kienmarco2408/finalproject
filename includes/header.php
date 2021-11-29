@@ -44,6 +44,9 @@ if(isset($_GET['pro_id'])){
     <link rel="stylesheet" href="styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
                    
@@ -67,6 +70,27 @@ if(isset($_GET['pro_id'])){
                    </ul>
             
             <ul class="nav navbar-nav navbar-right">
+            <li>
+                <form method="post" action="search.php" class="navbar-form">
+                       
+                    <div class="input-group">
+   
+                        <input type="text" class="form-control" placeholder="Search" name="search" >
+                           
+                           <span class="input-group-btn">
+                           
+                           <button type="submit" name="submit" value="Search" class="btn btn-primary">
+                               
+                               Search
+                               
+                           </button>
+                           
+                        </span>
+                           
+                    </div>
+                       
+                </form>
+            </li>
             <li class="<?php if($active=='Account') echo"active"; ?>">
                              
                 <?php 

@@ -301,7 +301,7 @@
                
            </div>   
 
-               <div id="order-summary" class="box">
+               <div id="order-summary" >
                        
                        <h2>Order Summary</h2>
                        

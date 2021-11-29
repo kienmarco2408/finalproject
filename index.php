@@ -89,7 +89,43 @@
            
        </div>
        
+   </div>  
+
+   <div id="hot">
+       
+       <div class="box">
+           
+           <div class="container">
+               
+               <div class="col-md-12">
+                   
+                   <h2>
+                        Our Latest Products
+                   </h2>
+                   
+               </div>
+               
+           </div>
+           
+       </div>
+       
    </div>
+
+   <div id="content" class="container">
+       
+       <div class="row" >
+           
+           <?php 
+
+           getPro();
+
+           ?>
+           
+       </div>
+       
+    </div>
+
+</div>
    
 <div class="w3-gray" id="about">
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="about">

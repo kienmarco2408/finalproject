@@ -25,7 +25,7 @@ function getPro(){
 
 		echo "
 
-		<div class='col-md-12 col-sm-12 single' >
+		<div class='col-md-3 col-sm-6 single' >
 
 			<div class='product'>
 
@@ -293,7 +293,7 @@ function search(){
 
 		echo "
 
-		<div class='col-md-4 col-sm-6 single'>
+		<div class='col-md-3 col-sm-6 single'>
 
 			<div class='product'>
 
