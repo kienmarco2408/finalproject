@@ -324,7 +324,7 @@ function search(){
 
 						<a class='btn btn-default' href 'details.php?pro_id=$pro_id'>
 
-							Veiw Details
+							View Details
 
 						</a>
 

@@ -36,13 +36,13 @@
 
 ?>
     
-<div class="row"><!-- row Begin -->
+<div class="row">
     
-    <div class="col-lg-12"><!-- col-lg-12 Begin -->
+    <div class="col-lg-12">
         
-        <ol class="breadcrumb"><!-- breadcrumb Begin -->
+        <ol class="breadcrumb">
             
-            <li class="active"><!-- active Begin -->
+            <li class="active">
                 
                 <i class="fa fa-dashboard"></i> Dashboard / Edit User
                 

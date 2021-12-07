@@ -24,8 +24,6 @@
         
         $p_title = $row_edit['product_title'];
         
-        $p_cat = $row_edit['p_cat_id'];
-        
         $cat = $row_edit['cat_id'];
         
         $p_image1 = $row_edit['product_img1'];
@@ -36,29 +34,9 @@
 
         $p_price = $row_edit['product_price'];
 
-        if ($p_price <0){
-
-          echo "<script> alert ('cannot minus price') </script>";
-
-        }
-
-        else{
-
         $p_keywords = $row_edit['product_keywords'];
-        
-        $p_desc = $row_edit['product_desc'];
 
-      }
-        
-    }
-        
-        $get_p_cat = "select * from products_categories where p_cat_id='$p_cat'";
-        
-        $run_p_cat = mysqli_query($con,$get_p_cat);
-        
-        $row_p_cat = mysqli_fetch_array($run_p_cat);
-        
-        $p_cat_title = $row_p_cat['p_cat_title'];
+        $p_desc = $row_edit['product_desc'];
         
         $get_cat = "select * from categories where cat_id='$cat'";
         
@@ -67,6 +45,7 @@
         $row_cat = mysqli_fetch_array($run_cat);
         
         $cat_title = $row_cat['cat_title'];
+    }
 
 ?>
 
@@ -79,23 +58,23 @@
 </head>
 <body>
     
-<div class="row"><!-- row Begin -->
+<div class="row">
     
-    <div class="col-lg-12"><!-- col-lg-12 Begin -->
+    <div class="col-lg-12">
         
-        <ol class="breadcrumb"><!-- breadcrumb Begin -->
+        <ol class="breadcrumb">
             
-            <li class="active"><!-- active Begin -->
+            <li class="active">
                 
                 <i class="fa fa-dashboard"></i> Dashboard / Edit Products
                 
-            </li><!-- active Finish -->
+            </li>
             
-        </ol><!-- breadcrumb Finish -->
+        </ol>
         
-    </div><!-- col-lg-12 Finish -->
+    </div>
     
-</div><!-- row Finish -->
+</div>
        
 <div class="row"><!-- row Begin -->
     
@@ -129,41 +108,6 @@
                        
                    </div><!-- form-group Finish -->
                    
-                   <div class="form-group"><!-- form-group Begin -->
-                       
-                      <label class="col-md-3 control-label"> Product Category </label> 
-                      
-                      <div class="col-md-6"><!-- col-md-6 Begin -->
-                          
-                          <select name="product_cat" class="form-control"><!-- form-control Begin -->
-                              
-                              <option value="<?php echo $p_cat; ?>"> <?php echo $p_cat_title; ?> </option>
-                              
-                              <?php 
-                              
-                              $get_p_cats = "select * from products_categories";
-                              $run_p_cats = mysqli_query($con,$get_p_cats);
-                              
-                              while ($row_p_cats=mysqli_fetch_array($run_p_cats)){
-                                  
-                                  $p_cat_id = $row_p_cats['p_cat_id'];
-                                  $p_cat_title = $row_p_cats['p_cat_title'];
-                                  
-                                  echo "
-                                  
-                                  <option value='$p_cat_id'> $p_cat_title </option>
-                                  
-                                  ";
-                                  
-                              }
-                              
-                              ?>
-                              
-                          </select><!-- form-control Finish -->
-                          
-                      </div><!-- col-md-6 Finish -->
-                       
-                   </div><!-- form-group Finish -->
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
@@ -233,11 +177,11 @@
                        
                    </div><!-- form-group Finish -->
                    
-                   <div class="form-group"><!-- form-group Begin -->
+                   <div class="form-group">
                        
                       <label class="col-md-3 control-label"> Product Image 3 </label> 
                       
-                      <div class="col-md-6"><!-- col-md-6 Begin -->
+                      <div class="col-md-6">
                           
                           <input name="product_img3" type="file" class="form-control form-height-custom">
                           
@@ -245,39 +189,39 @@
                           
                           <img width="70" height="70" src="product_images/<?php echo $p_image3; ?>" alt="<?php echo $p_image3; ?>">
                           
-                      </div><!-- col-md-6 Finish -->
+                      </div>
                        
-                   </div><!-- form-group Finish -->
+                   </div>
                    
-                   <div class="form-group"><!-- form-group Begin -->
+                   <div class="form-group">
                        
                       <label class="col-md-3 control-label"> Product Price </label> 
                       
-                      <div class="col-md-6"><!-- col-md-6 Begin -->
+                      <div class="col-md-6">
                           
                           <input name="product_price" type="text" class="form-control" required value="">
                           
-                      </div><!-- col-md-6 Finish -->
+                      </div>
                        
-                   </div><!-- form-group Finish -->
+                   </div>
                    
-                   <div class="form-group"><!-- form-group Begin -->
+                   <div class="form-group">
                        
                       <label class="col-md-3 control-label"> Product Keywords </label> 
                       
-                      <div class="col-md-6"><!-- col-md-6 Begin -->
+                      <div class="col-md-6">
                           
                           <input name="product_keywords" type="text" class="form-control" required value="<?php echo $p_keywords; ?>">
                           
-                      </div><!-- col-md-6 Finish -->
+                      </div>
                        
-                   </div><!-- form-group Finish -->
+                   </div>
                    
-                   <div class="form-group"><!-- form-group Begin -->
+                   <div class="form-group">
                        
                       <label class="col-md-3 control-label"> Product Desc </label> 
                       
-                      <div class="col-md-6"><!-- col-md-6 Begin -->
+                      <div class="col-md-6">
                           
                           <textarea name="product_desc" cols="19" rows="6" class="form-control">
                               
@@ -285,31 +229,31 @@
                               
                           </textarea>
                           
-                      </div><!-- col-md-6 Finish -->
+                      </div>
                        
-                   </div><!-- form-group Finish -->
+                   </div>
                    
-                   <div class="form-group"><!-- form-group Begin -->
+                   <div class="form-group">
                        
                       <label class="col-md-3 control-label"></label> 
                       
-                      <div class="col-md-6"><!-- col-md-6 Begin -->
+                      <div class="col-md-6">
                           
                           <input name="update" value="Update Product" type="submit" class="btn btn-primary form-control">
                           
-                      </div><!-- col-md-6 Finish -->
+                      </div>
                        
-                   </div><!-- form-group Finish -->
+                   </div>
                    
-               </form><!-- form-horizontal Finish -->
+               </form>
                
-           </div><!-- panel-body Finish -->
+           </div>
             
-        </div><!-- canel panel-default Finish -->
+        </div>
         
-    </div><!-- col-lg-12 Finish -->
+    </div>
     
-</div><!-- row Finish -->
+</div>
    
     <script src="js/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea'});</script>
@@ -322,7 +266,6 @@
 if(isset($_POST['update'])){
     
     $product_title = $_POST['product_title'];
-    $product_cat = $_POST['product_cat'];
     $cat = $_POST['cat'];
     $product_price = $_POST['product_price'];
     $product_keywords = $_POST['product_keywords'];
@@ -340,7 +283,7 @@ if(isset($_POST['update'])){
     move_uploaded_file($temp_name2,"product_images/$product_img2");
     move_uploaded_file($temp_name3,"product_images/$product_img3");
     
-    $update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',date=NOW(),product_title='$product_title',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_keywords='$product_keywords',product_desc='$product_desc',product_price='$product_price' where product_id='$p_id'";
+    $update_product = "update products set cat_id='$cat',date=NOW(),product_title='$product_title',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_keywords='$product_keywords',product_desc='$product_desc',product_price='$product_price' where product_id='$p_id'";
     
     $run_product = mysqli_query($con,$update_product);
     
